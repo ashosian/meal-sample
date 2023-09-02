@@ -6,10 +6,10 @@ import { Outlet } from 'react-router'
 
 const Rootlayout = () => {
   return (
-    <div>
+    <>
       <Header />
       <Outlet />
-    </div>
+    </>
   )
 }
 

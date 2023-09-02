@@ -44,10 +44,13 @@ export const Mealdb = createApi({
 
     getMealBySearch: builder.query({
       query: (search) => ({
-        url: `/search.php?s=${search}`,
+
+        url: `/search.php`,
         method: 'GET',
 
-
+        params: {
+          s: search
+        }
 
 
       })
