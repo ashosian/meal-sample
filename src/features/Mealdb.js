@@ -51,6 +51,15 @@ export const Mealdb = createApi({
         params: {
           s: search
         }
+      })
+
+    }),
+
+    getRandomMeal: builder.query({
+      query: () => ({
+
+        url: `/random.php`,
+        method: 'GET',
 
 
       })
@@ -66,4 +75,4 @@ export const Mealdb = createApi({
 
 })
 
-export const { useMealCategoryQuery, useMealIdQuery, useMealCataQuery, useGetMealBySearchQuery } = Mealdb;
+export const { useMealCategoryQuery, useMealIdQuery, useMealCataQuery, useGetMealBySearchQuery, useGetRandomMealQuery } = Mealdb;
