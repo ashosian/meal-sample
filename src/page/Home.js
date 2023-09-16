@@ -44,7 +44,7 @@ const Home = () => {
       </div>
       <hr />
       <div className='grid
-    grid-cols-4  bg-brown-300'>
+    grid-cols-4  bg-brown-300 sm:grid-cols-2'>
         {
           data.categories.map((food) => {
             return <div onClick={() => nav(`/detail/${food.strCategory}`)} className='gap-5 p-10 m-5 transition-all delay-75 shadow-lg border-black hover:scale-90 cursor-pointer delay-90' key={food.idCategory}>

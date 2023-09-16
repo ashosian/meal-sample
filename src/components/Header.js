@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik';
 import {
@@ -12,7 +12,7 @@ const Header = () => {
 
 
   const nav = useNavigate()
-
+  const [show, setShow] = useState(false);
   const formik = useFormik({
     initialValues: {
       anything: ''
@@ -31,10 +31,19 @@ const Header = () => {
         <img src="https://www.themealdb.com/images/logo-small.png" alt="" />
       </div>
       <div className="flex items-center space-x-3 font-bold">
-        <NavLink to='/'>Home</NavLink>
-        <NavLink to='/about'>About</NavLink>
-        <NavLink to='/contact'>Contact</NavLink>
 
+        <div className='space-x-3 sm:hidden'>
+          <NavLink to='/'>Home</NavLink>
+          <NavLink to='/about'>About</NavLink>
+          <NavLink to='/contact'>Contact</NavLink>
+        </div>
+
+        {show && <div className='space-x-3 sm:hidden flex flex-col'>
+          <NavLink to='/'>Home</NavLink>
+          <NavLink to='/about'>About</NavLink>
+          <NavLink to='/contact'>Contact</NavLink>
+        </div>
+        }
 
 
 
@@ -66,6 +75,11 @@ const Header = () => {
 
         </form>
 
+        <button onClick={() => setShow(!show)}>
+          <i className="fa-solid fa-bars hidden sm:flex">
+
+          </i>
+        </button>
       </div>
 
 
