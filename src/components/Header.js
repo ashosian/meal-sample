@@ -2,7 +2,10 @@ import React, { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik';
 import {
-
+  Menu,
+  MenuHandler,
+  MenuList,
+  MenuItem,
   Button,
   Input,
 } from "@material-tailwind/react";
@@ -38,12 +41,12 @@ const Header = () => {
           <NavLink to='/contact'>Contact</NavLink>
         </div>
 
-        {show && <div className='space-x-3 hidden md:flex flex-col'>
+        {/* {show && <div className='space-x-3 hidden md:flex flex-col'>
           <NavLink to='/'>Home</NavLink>
           <NavLink to='/about'>About</NavLink>
           <NavLink to='/contact'>Contact</NavLink>
         </div>
-        }
+        } */}
 
 
 
@@ -63,9 +66,13 @@ const Header = () => {
                   className: "min-w-[200px]",
                 }}
               />
+
+
               <Button type='submit' size="sm" className="!absolute right-1 top-1 rounded">
                 Search
               </Button>
+
+
             </div> {/* search*/}
 
 
@@ -75,11 +82,20 @@ const Header = () => {
 
         </form>
 
-        <button onClick={() => setShow(!show)}>
-          <i className="fa-solid fa-bars hidden md:flex">
 
-          </i>
-        </button>
+
+        <Menu>
+          <MenuHandler>
+            <i className="fa-solid fa-bars hidden md:flex">
+
+            </i>
+          </MenuHandler>
+          <MenuList className='hidden md:flex space-y-2 flex-col items-center'>
+            <NavLink to='/'>Home</NavLink>
+            <NavLink to='/about'>About</NavLink>
+            <NavLink to='/contact'>Contact</NavLink>
+          </MenuList>
+        </Menu>
       </div>
 
 
