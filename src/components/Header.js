@@ -32,13 +32,13 @@ const Header = () => {
       </div>
       <div className="flex items-center space-x-3 font-bold">
 
-        <div className='space-x-3 sm:hidden'>
+        <div className='space-x-3 md:hidden'>
           <NavLink to='/'>Home</NavLink>
           <NavLink to='/about'>About</NavLink>
           <NavLink to='/contact'>Contact</NavLink>
         </div>
 
-        {show && <div className='space-x-3 sm:hidden flex flex-col'>
+        {show && <div className='space-x-3 hidden md:flex flex-col'>
           <NavLink to='/'>Home</NavLink>
           <NavLink to='/about'>About</NavLink>
           <NavLink to='/contact'>Contact</NavLink>
@@ -76,7 +76,7 @@ const Header = () => {
         </form>
 
         <button onClick={() => setShow(!show)}>
-          <i className="fa-solid fa-bars hidden sm:flex">
+          <i className="fa-solid fa-bars hidden md:flex">
 
           </i>
         </button>

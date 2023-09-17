@@ -20,7 +20,7 @@ const Detail = () => {
           return <div onClick={() => nav(`/detail2/${item.idMeal}`)} className='flex flex-col items-center hover:scale-90 transition-all delay-75 cursor-pointer p-5' key={item.idMeal}>
 
             <img src={`${item.strMealThumb}`} alt="" />
-            <p>{item.strMeal}</p>
+            <p>{item.strMeal.substring(0, 50) + '...'}</p>
           </div>
         })
       }
